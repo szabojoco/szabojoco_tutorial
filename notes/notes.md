@@ -25,3 +25,5 @@ User page
         - Change email address
         - Change password
     - Purchased tutorials list (with purchased date)
+
+update
