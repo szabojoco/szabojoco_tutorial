@@ -24,6 +24,4 @@ User page
         - Edit username
         - Change email address
         - Change password
-    - Purchased tutorials list (with purchased date)
-
-update
+    - Purchased tutorials list - with purchased date
