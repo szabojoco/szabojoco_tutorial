@@ -4,10 +4,15 @@ Home page
     - cards with tutorials
 
 Tutorial
+    - tutorial image *
     - title
     - category
+    - tutor name
     - description
     - price
+
+Tutor
+    - tutor image *
 
 Login
     - Logout
@@ -21,7 +26,6 @@ User page
     - Hello {name of user}
     - Profile
         - Upload profile picture
-        - Edit username
         - Change email address
-        - Change password
+        - Change password, forget password
     - Purchased tutorials list - with purchased date

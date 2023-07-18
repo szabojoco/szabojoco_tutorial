@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>My Tutorial List</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} List of tutorials {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 offset-md-1" style="padding-top: 50px;">
+                <div class="row">
+                    {% for tutorial in tutorials %}
+                        <div class="col-md-3 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title">{{ tutorial.title }}</h2>
+                                    <h6 class="card-title">{{ tutorial.category }}</h6>
+                                    <h6 class="card-title">{{ tutorial.tutor }}</h6>
+                                    <h5 class="card-title" align="right">{{ tutorial.price }} €</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

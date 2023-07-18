@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row align-items-center" style="padding-top: 100px;">
+            <div class="col-md-5 offset-md-1 text-center">
+                <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                    <img src="{% static 'images/hero.png' %}" class="rounded" alt="hero"
+                         style="width: 100%; max-width: 500px; margin-bottom: 20px;">
+                </div>
+            </div>
+            <div class="col-md-5 text-center">
+                <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                    <h3 style="margin-top: 20px;">Welcome in my tutorial home page</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
