@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Tutorial Content{% endblock %}
+
+{% block content %}
+    <div class="container-fluid my-container" style="margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 my-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ tutorial.image.url }}" alt="{{ tutorial.title }}">
+                            <div class="card-body">
+                                <h2 class="card-title text-center">Content: {{ tutorial.title }}</h2>
+                                <br>
+                                <div>
+                                    {{ tutorial.content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

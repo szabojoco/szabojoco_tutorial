@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}My Tutorials{% endblock %}
+
+{% block content %}
+    <div class="container-fluid my-container" style="padding-bottom: 50px;">
+        <div class="row">
+            <div class="col-10 offset-md-1">
+                <div class="row">
+                    {% for tutorial in purchased_tutorials %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ tutorial.tutorial.image.url }}"
+                                     alt="{{ tutorial.tutorial.title }}">
+                                <div class="card-body">
+                                    <h2 class="card-title">{{ tutorial.tutorial.title|slice:":15" }}</h2>
+                                    <h6 class="card-title">Category: {{ tutorial.tutorial.category }}</h6>
+                                    <h6 class="card-title">Trainer name: {{ tutorial.tutorial.tutor }}</h6>
+                                    <div class="text-center">
+                                        <h5 class="card-title">{{ tutorial.tutorial.price }}€</h5>
+                                    </div>
+                                    <div class="d-flex justify-content-between mt-3">
+                                        {% if tutorial.tutorial.is_paid %}
+                                            <a href="{% url 'tutorial_content' tutorial.tutorial.id %}"
+                                               class="btn btn-primary">Open Tutorial</a>
+                                        {% else %}
+                                            <a href="{% url 'tutorial_buy' tutorial.tutorial.id %}"
+                                               class="btn btn-primary">Buy</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

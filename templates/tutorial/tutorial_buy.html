@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Buy Tutorial{% endblock %}
+
+{% block content %}
+    <div class="container-fluid my-container" style="margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Buy Tutorial</h2>
+                        <p class="card-text">Would you like to buy the tutorial: {{ tutorial.title }}?</p>
+                        <h5 class="card-title mb-4" style="font-size: 24px;">{{ tutorial.price }}€</h5>
+                        <form action="{% url 'process_payment' tutorial.id %}" method="post">
+                            {% csrf_token %}
+                            <button class="btn btn-primary" type="submit">Buy Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

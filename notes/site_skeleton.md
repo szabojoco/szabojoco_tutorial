@@ -4,12 +4,14 @@ Home page
     - cards with tutorials
 
 Tutorial
-    - tutorial image *
+    - tutorial image
     - title
     - category
     - tutor name
     - description
     - price
+    - buy button
+    - demo video url *
 
 Tutor
     - tutor image *
