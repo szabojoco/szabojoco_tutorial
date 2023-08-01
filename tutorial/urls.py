@@ -14,5 +14,4 @@ urlpatterns = [
     path('tutorial_detail/<int:tutorial_id>/', views.tutorial_detail, name='tutorial_detail'),
     path('tutorial_buy/<int:tutorial_id>/', views.tutorial_buy, name='tutorial_buy'),
     path('tutorial/process_payment/<int:tutorial_id>/', views.process_payment, name='process_payment'),
-    path('tutorial/<int:tutorial_id>/purchased_successful/', views.purchased_successful, name='purchased_successful'),
 ]

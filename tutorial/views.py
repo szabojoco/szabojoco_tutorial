@@ -8,10 +8,25 @@ from tutorial.forms import UserForm
 from .models import Tutorial, UserTutorialPurchased
 
 
+def tutorials_to_purchased_tutorials(tutorial, user):
+    if user.is_authenticated:
+        is_paid = UserTutorialPurchased.objects.filter(tutorial=tutorial, user=user).count()>0
+    else:
+        is_paid = False
+    return {'tutorial':tutorial, 'is_paid':is_paid}
+
 # View for listing all tutorials
 def tutorial_view(request):
     my_objects = Tutorial.objects.all()
-    return render(request, 'tutorial/tutorial.html', {'tutorials': my_objects})
+
+    # my_objects = [tutorials_to_purchased_tutorials(t, request.user) for t in my_objects]
+
+    my_objects = Tutorial.objects.all()
+    tutorials = []
+    for tutorial in my_objects:
+        tutorials.append(tutorials_to_purchased_tutorials(tutorial, request.user))
+
+    return render(request, 'tutorial/tutorial.html', {'tutorials': tutorials})
 
 
 # View for displaying details of a tutorial
@@ -75,7 +90,7 @@ def purchased_tutorial(request, tutorial_id):
 # View for successful purchase message
 @login_required
 def purchased_successful(request):
-    return render(request, 'tutorial/purchased_successful.html')
+    return render(request, 'tutorial/purchased_tutorial.html.html')
 
 
 # View for displaying the content of a purchased tutorial
