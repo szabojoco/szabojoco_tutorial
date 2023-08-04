@@ -1,0 +1,16 @@
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #263ebc;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #d1d1d1;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff;
+}
